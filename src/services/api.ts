@@ -2,7 +2,8 @@ import axios from "axios";
 import { User } from "../types/User";
 import { Article } from "../types/Articles";
 
-const API_BASE_URL = "http://www.localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "https://wiki-frontend.onrender.com";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -15,7 +16,6 @@ interface UserSignUpResponse {
 export async function signUp(user: User): Promise<UserSignUpResponse> {
   try {
     const response = await api.post<UserSignUpResponse>("/user", user);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
