@@ -3,7 +3,7 @@ import { User } from "../types/User";
 import { Article } from "../types/Articles";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://wiki-frontend.onrender.com";
+  import.meta.env.VITE_API_URL || "https://wiki-backend-gkvs.onrender.com";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
